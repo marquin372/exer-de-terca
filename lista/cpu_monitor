@@ -1,0 +1,7 @@
+import psutil
+
+while True:
+    uso = psutil.cpu_percent(interval=1, percpu=True)
+    print(f"CPU Total: {sum(uso)/len(uso):.2f}%")
+    for i, u in enumerate(uso):
+        print(f"Núcleo {i}: {u}%")
